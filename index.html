@@ -6,21 +6,230 @@
 <meta name="theme-color" content="#f7e4ea">
 <title>Аяулымға арналған ерекше кеш</title>
 <style>
-:root {--rose:#a66a78;--ink:#543f45}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;overflow-x:hidden;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:linear-gradient(155deg,#fffaf7,#f8e8ec 48%,#f1d8df)}body.locked{overflow:hidden}section{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:72px 18px;position:relative}.wrap{width:min(760px,100%);text-align:center;position:relative;z-index:2}.k{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--rose);font-weight:600;margin:0 0 18px}h1{font:italic 500 clamp(74px,24vw,136px)/.88 Georgia,serif;color:#96616d;letter-spacing:-.055em;margin:10px 0 26px}h2{font:500 clamp(44px,12vw,72px)/1 Georgia,serif;color:#91606b;margin:0 0 24px}.lead{font:400 clamp(24px,7vw,34px)/1.35 Georgia,serif;margin:0 auto 24px}.date{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8e616b;margin-bottom:32px}.btn{min-height:54px;padding:0 24px;border:0;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:14px;font-weight:700;background:linear-gradient(135deg,#c78a96,#9e6874);box-shadow:0 14px 36px rgba(158,104,116,.25);cursor:pointer}.hero{background:radial-gradient(circle at 50% 18%,rgba(255,255,255,.98),transparent 27%),radial-gradient(circle at 82% 18%,rgba(241,187,202,.44),transparent 32%)}.card{padding:34px 22px;border:1px solid rgba(255,255,255,.85);border-radius:28px;background:rgba(255,255,255,.62);box-shadow:0 24px 70px rgba(118,75,86,.12);backdrop-filter:blur(18px)}.letter p{margin-bottom:18px;color:#624d53;font:400 21px/1.6 Georgia,serif}.wait{font-style:italic;color:#986673!important;font-size:25px!important;margin-top:30px!important}.grid{display:grid;grid-template-columns:1fr;gap:12px;margin:26px 0}.info{padding:19px;border:1px solid rgba(255,255,255,.82);border-radius:20px;background:rgba(255,255,255,.46)}.info span{display:block;margin-bottom:7px;color:#9d7a82;font-size:10px;letter-spacing:.16em;text-transform:uppercase}.info b{color:#5e474d;font:500 23px Georgia,serif}.timer{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:28px}.t{padding:19px 4px 15px;border:1px solid white;border-radius:17px;background:rgba(255,255,255,.53)}.t b{display:block;color:#94616d;font:500 clamp(34px,11vw,54px)/.9 Georgia,serif}.t span{display:block;margin-top:10px;color:#98757e;font-size:8px;text-transform:uppercase}.sun{color:#fff;background:radial-gradient(circle at 50% 18%,rgba(255,245,220,.87),transparent 13%),linear-gradient(#f4d3d9,#dfa9b5 38%,#a97983 69%,#75525c)}.sun p{margin-bottom:18px;font:500 clamp(32px,9vw,51px)/1.2 Georgia,serif}.final p{margin-bottom:25px;font:400 clamp(24px,7vw,37px)/1.45 Georgia,serif}.secret{color:#9c6975;font-style:italic}.music{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top));z-index:99;width:52px;height:52px;border:1px solid #fff;border-radius:50%;background:rgba(255,255,255,.92);color:#91616b;font-size:20px;box-shadow:0 10px 30px rgba(110,72,81,.15);display:none}.music.show{display:block}.music.on{box-shadow:0 0 0 7px rgba(255,255,255,.28),0 10px 30px rgba(110,72,81,.2)}.note{position:fixed;right:14px;top:calc(74px + env(safe-area-inset-top));z-index:98;max-width:265px;padding:11px 13px;border:1px solid #fff;border-radius:15px;background:rgba(255,255,255,.93);color:#765e65;font-size:12px;opacity:0;transition:.2s;pointer-events:none}.note.show{opacity:1}.game{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:22px;background:radial-gradient(circle at 50% 18%,rgba(255,255,255,.98),transparent 28%),radial-gradient(circle at 80% 20%,rgba(241,187,202,.48),transparent 34%),linear-gradient(155deg,#fffaf7,#f8e8ec 48%,#f1d8df);transition:opacity .7s ease,visibility .7s ease}.game.hide{opacity:0;visibility:hidden}.game-card{width:min(560px,100%);min-height:430px;border-radius:34px;padding:38px 24px;background:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.9);box-shadow:0 28px 80px rgba(118,75,86,.14);backdrop-filter:blur(18px);position:relative;overflow:hidden}.game-title{font:500 clamp(38px,11vw,62px)/1.05 Georgia,serif;color:#94616d;margin:18px 0 14px}.game-sub{font-size:15px;line-height:1.6;color:#806870;margin:0 auto 30px;max-width:420px}.choices{position:relative;height:150px;margin-top:10px}.yes,.no{position:absolute;min-width:132px;min-height:52px;border-radius:999px;border:0;font-weight:700;font-size:15px;cursor:pointer}.yes{left:50%;top:18px;transform:translateX(-120%);color:#fff;background:linear-gradient(135deg,#c78a96,#9e6874)}.no{left:50%;top:18px;transform:translateX(20%);color:#8e5f69;background:rgba(255,255,255,.85);border:1px solid white}.game-msg{min-height:30px;margin-top:10px;font:italic 500 22px Georgia,serif;color:#9a6672}.final-open{display:none;margin-top:24px}.final-open.show{display:inline-flex}@media(min-width:720px){.grid{grid-template-columns:repeat(3,1fr)}.card{padding:50px}}
+:root{--rose:#a66a78;--ink:#543f45}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;overflow-x:hidden;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:linear-gradient(155deg,#fffaf7,#f8e8ec 48%,#f1d8df)}
+body.locked{overflow:hidden}
+section{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:72px 18px;position:relative}
+.wrap{width:min(760px,100%);text-align:center;position:relative;z-index:2}
+.k{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--rose);font-weight:600;margin:0 0 18px}
+h1{font:italic 500 clamp(74px,24vw,136px)/.88 Georgia,serif;color:#96616d;letter-spacing:-.055em;margin:10px 0 26px}
+h2{font:500 clamp(44px,12vw,72px)/1 Georgia,serif;color:#91606b;margin:0 0 24px}
+.lead{font:400 clamp(24px,7vw,34px)/1.35 Georgia,serif;margin:0 auto 24px}
+.date{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8e616b;margin-bottom:32px}
+.btn{min-height:54px;padding:0 24px;border:0;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:14px;font-weight:700;background:linear-gradient(135deg,#c78a96,#9e6874);box-shadow:0 14px 36px rgba(158,104,116,.25);cursor:pointer}
+.hero{background:radial-gradient(circle at 50% 18%,rgba(255,255,255,.98),transparent 27%),radial-gradient(circle at 82% 18%,rgba(241,187,202,.44),transparent 32%)}
+.card{padding:34px 22px;border:1px solid rgba(255,255,255,.85);border-radius:28px;background:rgba(255,255,255,.62);box-shadow:0 24px 70px rgba(118,75,86,.12);backdrop-filter:blur(18px)}
+.letter p{margin-bottom:18px;color:#624d53;font:400 21px/1.6 Georgia,serif}
+.wait{font-style:italic;color:#986673!important;font-size:25px!important;margin-top:30px!important}
+.grid{display:grid;grid-template-columns:1fr;gap:12px;margin:26px 0}
+.info{padding:19px;border:1px solid rgba(255,255,255,.82);border-radius:20px;background:rgba(255,255,255,.46)}
+.info span{display:block;margin-bottom:7px;color:#9d7a82;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+.info b{color:#5e474d;font:500 23px Georgia,serif}
+.timer{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:28px}
+.t{padding:19px 4px 15px;border:1px solid white;border-radius:17px;background:rgba(255,255,255,.53)}
+.t b{display:block;color:#94616d;font:500 clamp(34px,11vw,54px)/.9 Georgia,serif}
+.t span{display:block;margin-top:10px;color:#98757e;font-size:8px;text-transform:uppercase}
+.sun{color:#fff;background:radial-gradient(circle at 50% 18%,rgba(255,245,220,.87),transparent 13%),linear-gradient(#f4d3d9,#dfa9b5 38%,#a97983 69%,#75525c)}
+.sun p{margin-bottom:18px;font:500 clamp(32px,9vw,51px)/1.2 Georgia,serif}
+.final p{margin-bottom:25px;font:400 clamp(24px,7vw,37px)/1.45 Georgia,serif}
+.secret{color:#9c6975;font-style:italic}
+
+.music{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top));z-index:99;width:52px;height:52px;border:1px solid #fff;border-radius:50%;background:rgba(255,255,255,.92);color:#91616b;font-size:20px;box-shadow:0 10px 30px rgba(110,72,81,.15);display:none}
+.music.show{display:block}.music.on{box-shadow:0 0 0 7px rgba(255,255,255,.28),0 10px 30px rgba(110,72,81,.2)}
+.note{position:fixed;right:14px;top:calc(74px + env(safe-area-inset-top));z-index:98;max-width:265px;padding:11px 13px;border:1px solid #fff;border-radius:15px;background:rgba(255,255,255,.93);color:#765e65;font-size:12px;opacity:0;transition:.2s;pointer-events:none}
+.note.show{opacity:1}
+
+/* Intro game */
+.game{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;background:radial-gradient(circle at 50% 18%,rgba(255,255,255,.98),transparent 28%),radial-gradient(circle at 80% 20%,rgba(241,187,202,.48),transparent 34%),linear-gradient(155deg,#fffaf7,#f8e8ec 48%,#f1d8df);transition:opacity .7s ease,visibility .7s ease}
+.game.hide{opacity:0;visibility:hidden}
+.game-card{width:min(560px,100%);min-height:470px;border-radius:30px;padding:32px 18px;background:rgba(255,255,255,.66);border:1px solid rgba(255,255,255,.9);box-shadow:0 28px 80px rgba(118,75,86,.14);backdrop-filter:blur(18px);position:relative;overflow:hidden}
+.game-title{font:500 clamp(36px,10vw,58px)/1.05 Georgia,serif;color:#94616d;margin:18px 0 14px}
+.game-sub{font-size:15px;line-height:1.6;color:#806870;margin:0 auto 24px;max-width:420px}
+.choices{position:relative;height:180px;margin-top:8px}
+.yes,.no{position:absolute;min-width:132px;min-height:52px;border-radius:999px;border:0;font-weight:700;font-size:15px;cursor:pointer;transition:left .24s ease,top .24s ease,transform .24s ease}
+.yes{left:18%;top:18px;color:#fff;background:linear-gradient(135deg,#c78a96,#9e6874)}
+.no{left:58%;top:18px;color:#8e5f69;background:rgba(255,255,255,.9);border:1px solid white}
+.game-msg{min-height:34px;margin-top:4px;font:italic 500 21px Georgia,serif;color:#9a6672}
+.final-open{display:none;margin-top:18px}
+.final-open.show{display:inline-flex}
+
+@media(max-width:480px){
+  .game-card{min-height:500px;padding:28px 14px}
+  .choices{height:210px}
+  .yes,.no{min-width:120px;min-height:50px;font-size:14px}
+  .yes{left:8%;top:18px}
+  .no{left:56%;top:18px}
+}
+@media(min-width:720px){.grid{grid-template-columns:repeat(3,1fr)}.card{padding:50px}}
 </style>
 </head>
 <body class="locked">
-<audio id="song" preload="auto" loop><source src="music.mp3" type="audio/mpeg"></audio>
-<div class="game" id="game"><div class="game-card"><p class="k">Кішкентай сұрақ</p><div class="game-title" id="gameTitle">Бұл сайтты көргің келе ме?</div><p class="game-sub" id="gameSub">Жауабыңды жақсылап ойлан 😏</p><div class="choices" id="choices"><button class="yes" id="yesBtn">Иә</button><button class="no" id="noBtn">Жоқ</button></div><div class="game-msg" id="gameMsg"></div><button class="btn final-open" id="finalOpen">Құпияны ашу ♡</button></div></div>
-<button id="musicBtn" class="music" aria-label="Музыка">♫</button><div id="note" class="note">Музыка ойнап тұр ♡</div>
+<audio id="song" preload="auto" loop playsinline>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="game" id="game">
+  <div class="game-card">
+    <p class="k">Кішкентай сұрақ</p>
+    <div class="game-title" id="gameTitle">Бұл сайтты көргің келе ме?</div>
+    <p class="game-sub" id="gameSub">Жауабыңды жақсылап ойлан 😏</p>
+    <div class="choices" id="choices">
+      <button class="yes" id="yesBtn">Иә</button>
+      <button class="no" id="noBtn">Жоқ</button>
+    </div>
+    <div class="game-msg" id="gameMsg"></div>
+    <button class="btn final-open" id="finalOpen">Құпияны ашу ♡</button>
+  </div>
+</div>
+
+<button id="musicBtn" class="music" aria-label="Музыка">♫</button>
+<div id="note" class="note">Музыка ойнап тұр ♡</div>
+
 <section class="hero"><div class="wrap"><p class="k">Өмірімдегі ең ерекше жанға</p><h1>Аяулым</h1><p class="lead">Сені бір ерекше кешке шақырғым келеді…</p><p class="date">16 • 08 • 2026 &nbsp;•&nbsp; 18:00</p><a class="btn" href="#letter">Шақыруды ашу ♡</a></div></section>
+
 <section class="letter" id="letter"><div class="wrap"><div class="card"><p class="k">Тек саған арналған</p><h2>Аяулым,</h2><p>Өмірде елеусіз өтіп кететін күндер болады.</p><p>Ал кейбір сәттер жүректе мәңгі қалады.</p><p>Мен осы кештің дәл сондай болғанын қалаймын.</p><p>Қазір саған бәрін айтып қойғым келмейді…</p><p>Тек маған сен, ең әдемі күлкіңді алып, сол жерге кел. 🤍</p><p class="wait">Мен сені күтемін.</p></div></div></section>
+
 <section><div class="wrap"><p class="k">16 тамыз • тек екеумізге</p><h2>Біздің ерекше кешіміз</h2><div class="card"><div class="grid"><div class="info"><span>Күні</span><b>16 тамыз 2026</b></div><div class="info"><span>Уақыты</span><b>18:00</b></div><div class="info"><span>Өтетін орны</span><b>Тоған жанындағы терраса</b></div></div><a class="btn" target="_blank" rel="noopener" href="https://go.2gis.com/GJhq4">Бағытты ашу ↗</a></div></div></section>
+
 <section><div class="wrap"><p class="k">Әр сәтті санап</p><h2>Біздің кешке дейін…</h2><div class="timer"><div class="t"><b id="d">00</b><span>күн</span></div><div class="t"><b id="h">00</b><span>сағат</span></div><div class="t"><b id="m">00</b><span>минут</span></div><div class="t"><b id="s">00</b><span>секунд</span></div></div></div></section>
+
 <section class="sun"><div class="wrap"><p>Әдемі кештер көп…</p><p>Бірақ маған керегі — біреу ғана.</p><p>Сенің жаныңда өтетін кеш.</p><div>16.08.2026</div></div></section>
+
 <section class="final"><div class="wrap"><p class="k">Кейбір сөздерді тек жүзбе-жүз айту керек</p><h2>Аяулым…</h2><p>Осы кеште мен саған жүрегімде көптен бері сақтап жүрген сөзімді айтқым келеді.</p><p>Және бір өте маңызды сұрақ қойғым келеді…</p><p class="secret">Қалғанын кездескенде айтамын. ♡</p><div>Саған деген махаббатпен.</div></div></section>
+
 <script>
-const game=document.getElementById('game'),title=document.getElementById('gameTitle'),sub=document.getElementById('gameSub'),yes=document.getElementById('yesBtn'),no=document.getElementById('noBtn'),msg=document.getElementById('gameMsg'),choices=document.getElementById('choices'),finalOpen=document.getElementById('finalOpen'),song=document.getElementById('song'),musicBtn=document.getElementById('musicBtn'),note=document.getElementById('note');let yesStep=0,noCount=0,playing=false;const noTexts=['Жоғы несі? 😏','Шынымен көргің келмей ме?','Мен қанша дайындалдым ғой… 🥲','«Иә» батырмасы әдемірек қой 😄','Болды, енді тек «Иә» қалды 😂'];function moveNo(){const box=choices.getBoundingClientRect(),bw=no.offsetWidth,bh=no.offsetHeight,x=Math.max(6,Math.random()*(box.width-bw-12)),y=Math.max(6,Math.random()*(box.height-bh-12));no.style.left=x+'px';no.style.top=y+'px';no.style.transform='none'}['mouseenter','touchstart'].forEach(ev=>no.addEventListener(ev,e=>{if(ev==='touchstart')e.preventDefault();moveNo()},{passive:false}));no.addEventListener('click',()=>{msg.textContent=noTexts[Math.min(noCount,noTexts.length-1)];noCount++;if(noCount>=5){no.style.display='none';yes.style.left='50%';yes.style.transform='translateX(-50%)';yes.textContent='Иә, көргім келеді ♡'}else moveNo()});yes.addEventListener('click',()=>{yesStep++;msg.textContent='';if(yesStep===1){title.textContent='Точно ма?';sub.textContent='Соңғы шешімің осы ма? 😏';yes.textContent='Иә, точно';moveNo()}else if(yesStep===2){title.textContent='Точно-точно ма?';sub.textContent='Кейін қайтып кетпейсің ғой? 😄';yes.textContent='Иә, точно-точно';moveNo()}else{title.textContent='Мейлі, қоймадың ғой 😄';sub.textContent='Онда саған арналған кішкентай құпияны ашайын…';choices.style.display='none';finalOpen.classList.add('show')}});finalOpen.addEventListener('click',async()=>{game.classList.add('hide');document.body.classList.remove('locked');musicBtn.classList.add('show');try{await song.play();playing=true;musicBtn.textContent='♪';musicBtn.classList.add('on')}catch(e){}setTimeout(()=>document.querySelector('.hero').scrollIntoView({behavior:'smooth'}),300)});musicBtn.addEventListener('click',async()=>{if(!playing){await song.play();playing=true;musicBtn.textContent='♪';musicBtn.classList.add('on');note.textContent='Музыка ойнап тұр ♡'}else{song.pause();playing=false;musicBtn.textContent='♫';musicBtn.classList.remove('on');note.textContent='Музыка тоқтатылды'}note.classList.add('show');setTimeout(()=>note.classList.remove('show'),2200)});const T=new Date('2026-08-16T18:00:00+05:00').getTime(),p=n=>String(n).padStart(2,'0');function tick(){let x=Math.max(0,T-Date.now()),d=Math.floor(x/86400000);x%=86400000;let h=Math.floor(x/3600000);x%=3600000;let m=Math.floor(x/60000),s=Math.floor(x%60000/1000);document.getElementById('d').textContent=p(d);document.getElementById('h').textContent=p(h);document.getElementById('m').textContent=p(m);document.getElementById('s').textContent=p(s)}tick();setInterval(tick,1000);
+const game=document.getElementById('game');
+const title=document.getElementById('gameTitle');
+const sub=document.getElementById('gameSub');
+const yes=document.getElementById('yesBtn');
+const no=document.getElementById('noBtn');
+const msg=document.getElementById('gameMsg');
+const choices=document.getElementById('choices');
+const finalOpen=document.getElementById('finalOpen');
+const song=document.getElementById('song');
+const musicBtn=document.getElementById('musicBtn');
+const note=document.getElementById('note');
+
+let yesStep=0,noCount=0,playing=false,positionIndex=0;
+
+const noTexts=[
+  'Жоғы несі? 😏',
+  'Шынымен көргің келмей ме?',
+  'Мен қанша дайындалдым ғой… 🥲'
+];
+
+function getPositions(){
+  const mobile=window.innerWidth<=480;
+  return mobile
+    ? [
+        {left:'56%',top:'18px'},
+        {left:'8%',top:'92px'},
+        {left:'52%',top:'142px'}
+      ]
+    : [
+        {left:'58%',top:'18px'},
+        {left:'16%',top:'92px'},
+        {left:'58%',top:'112px'}
+      ];
+}
+
+function moveNo(){
+  const positions=getPositions();
+  positionIndex=(positionIndex+1)%positions.length;
+  no.style.left=positions[positionIndex].left;
+  no.style.top=positions[positionIndex].top;
+}
+
+no.addEventListener('pointerenter',moveNo);
+no.addEventListener('touchstart',()=>{ setTimeout(moveNo,80); },{passive:true});
+
+no.addEventListener('click',()=>{
+  msg.textContent=noTexts[Math.min(noCount,noTexts.length-1)];
+  noCount++;
+  if(noCount>=3){
+    no.style.display='none';
+    yes.style.left='50%';
+    yes.style.top='55px';
+    yes.style.transform='translateX(-50%)';
+    yes.textContent='Иә, көргім келеді ♡';
+  }else{
+    moveNo();
+  }
+});
+
+yes.addEventListener('click',()=>{
+  yesStep++;
+  msg.textContent='';
+  if(yesStep===1){
+    title.textContent='Точно ма?';
+    sub.textContent='Соңғы шешімің осы ма? 😏';
+    yes.textContent='Иә, точно';
+  }else if(yesStep===2){
+    title.textContent='Точно-точно ма?';
+    sub.textContent='Кейін қайтып кетпейсің ғой? 😄';
+    yes.textContent='Иә, точно-точно';
+  }else{
+    title.textContent='Мейлі, қоймадың ғой 😄';
+    sub.textContent='Онда саған арналған кішкентай құпияны ашайын…';
+    choices.style.display='none';
+    finalOpen.classList.add('show');
+  }
+});
+
+finalOpen.addEventListener('click',async()=>{
+  try{
+    song.currentTime=0;
+    await song.play();
+    playing=true;
+    musicBtn.textContent='♪';
+    musicBtn.classList.add('on');
+  }catch(e){
+    playing=false;
+  }
+
+  game.classList.add('hide');
+  document.body.classList.remove('locked');
+  musicBtn.classList.add('show');
+
+  setTimeout(()=>document.querySelector('.hero').scrollIntoView({behavior:'smooth'}),250);
+});
+
+musicBtn.addEventListener('click',async()=>{
+  try{
+    if(!playing){
+      await song.play();
+      playing=true;
+      musicBtn.textContent='♪';
+      musicBtn.classList.add('on');
+      note.textContent='Музыка ойнап тұр ♡';
+    }else{
+      song.pause();
+      playing=false;
+      musicBtn.textContent='♫';
+      musicBtn.classList.remove('on');
+      note.textContent='Музыка тоқтатылды';
+    }
+  }catch(e){
+    note.textContent='Музыканы қосу үшін қайта бас';
+  }
+  note.classList.add('show');
+  setTimeout(()=>note.classList.remove('show'),2200);
+});
+
+const T=new Date('2026-08-16T18:00:00+05:00').getTime();
+const p=n=>String(n).padStart(2,'0');
+function tick(){
+  let x=Math.max(0,T-Date.now()),d=Math.floor(x/86400000);x%=86400000;
+  let h=Math.floor(x/3600000);x%=3600000;
+  let m=Math.floor(x/60000),s=Math.floor(x%60000/1000);
+  document.getElementById('d').textContent=p(d);
+  document.getElementById('h').textContent=p(h);
+  document.getElementById('m').textContent=p(m);
+  document.getElementById('s').textContent=p(s);
+}
+tick();setInterval(tick,1000);
 </script>
-</body></html>
+</body>
+</html>
