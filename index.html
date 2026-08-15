@@ -55,6 +55,23 @@ h2{font:500 clamp(44px,12vw,72px)/1 Georgia,serif;color:#91606b;margin:0 0 24px}
 .final-open{display:none;margin-top:18px}
 .final-open.show{display:inline-flex}
 
+
+.hearts-layer{
+  position:fixed;inset:0;z-index:120;pointer-events:none;overflow:hidden;display:none
+}
+.hearts-layer.show{display:block}
+.falling-heart{
+  position:absolute;top:-40px;opacity:.92;
+  animation:heartFall linear forwards;
+  filter:drop-shadow(0 4px 8px rgba(151,83,102,.18));
+  user-select:none
+}
+@keyframes heartFall{
+  0%{transform:translate3d(0,-40px,0) rotate(0deg);opacity:0}
+  10%{opacity:.95}
+  100%{transform:translate3d(var(--drift),110vh,0) rotate(360deg);opacity:.15}
+}
+
 @media(max-width:480px){
   .game-card{min-height:500px;padding:28px 14px}
   .choices{height:210px}
@@ -66,6 +83,7 @@ h2{font:500 clamp(44px,12vw,72px)/1 Georgia,serif;color:#91606b;margin:0 0 24px}
 </style>
 </head>
 <body class="locked">
+<div class="hearts-layer" id="heartsLayer"></div>
 <audio id="song" preload="auto" loop playsinline>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
@@ -114,6 +132,46 @@ const note=document.getElementById('note');
 
 let yesStep=0,noCount=0,playing=false,positionIndex=0;
 
+let audioCtx=null;
+function tone(freq=520,duration=.09,type='sine',volume=.05){
+  try{
+    audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();
+    const o=audioCtx.createOscillator(),g=audioCtx.createGain();
+    o.type=type;o.frequency.value=freq;g.gain.value=volume;
+    o.connect(g);g.connect(audioCtx.destination);
+    const now=audioCtx.currentTime;
+    g.gain.setValueAtTime(volume,now);
+    g.gain.exponentialRampToValueAtTime(.001,now+duration);
+    o.start(now);o.stop(now+duration);
+  }catch(e){}
+}
+function successSound(){
+  tone(523,.12,'sine',.05);
+  setTimeout(()=>tone(659,.12,'sine',.05),110);
+  setTimeout(()=>tone(784,.18,'sine',.05),220);
+}
+const heartsLayer=document.getElementById('heartsLayer');
+let heartsTimer=null;
+function createHeart(){
+  const h=document.createElement('div');
+  h.className='falling-heart';
+  h.textContent=Math.random()>.5?'♡':'♥';
+  h.style.left=Math.random()*100+'vw';
+  h.style.fontSize=(14+Math.random()*22)+'px';
+  h.style.color=Math.random()>.5?'#d78fa2':'#b86f82';
+  h.style.animationDuration=(4.8+Math.random()*3.8)+'s';
+  h.style.setProperty('--drift',(-80+Math.random()*160)+'px');
+  heartsLayer.appendChild(h);
+  setTimeout(()=>h.remove(),9000);
+}
+function startHearts(){
+  heartsLayer.classList.add('show');
+  for(let i=0;i<14;i++) setTimeout(createHeart,i*120);
+  heartsTimer=setInterval(createHeart,320);
+  setTimeout(()=>{clearInterval(heartsTimer);heartsTimer=null},18000);
+}
+
+
 const noTexts=[
   'Жоғы несі? 😏',
   'Шынымен көргің келмей ме?',
@@ -145,7 +203,7 @@ function moveNo(){
 no.addEventListener('pointerenter',moveNo);
 no.addEventListener('touchstart',()=>{ setTimeout(moveNo,80); },{passive:true});
 
-no.addEventListener('click',()=>{
+no.addEventListener('click',()=>{tone(220,.08,'square',.035);
   msg.textContent=noTexts[Math.min(noCount,noTexts.length-1)];
   noCount++;
   if(noCount>=3){
@@ -159,7 +217,7 @@ no.addEventListener('click',()=>{
   }
 });
 
-yes.addEventListener('click',()=>{
+yes.addEventListener('click',()=>{tone(620,.09,'sine',.045);
   yesStep++;
   msg.textContent='';
   if(yesStep===1){
@@ -178,7 +236,7 @@ yes.addEventListener('click',()=>{
   }
 });
 
-finalOpen.addEventListener('click',async()=>{
+finalOpen.addEventListener('click',async()=>{successSound();startHearts();
   try{
     song.currentTime=0;
     await song.play();
